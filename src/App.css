@@ -37,7 +37,7 @@ h1 {
   display: flex;
 }
 
-.course-item_detial {
+.course-item__detail {
   flex: 1;
   justify-self: start;
   padding: 1rem 0 1rem 1rem;
