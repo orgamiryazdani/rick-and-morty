@@ -24,7 +24,7 @@ h1 {
   font-weight: 300;
 }
 
-.course-status.active {
+.course-status .active {
   font-weight: 700;
   color: #334155;
 }
