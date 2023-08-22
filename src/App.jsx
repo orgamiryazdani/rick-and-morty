@@ -1,17 +1,17 @@
+import { allCharacters } from "../data/data"
 import "./App.css";
-import CourseList from "./components/CourseList";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import CharacterDetail from "./components/CharacterDetail";
+import Navbar from "./components/Navbar";
+import CharacterList from "./components/CharacterList";
 
 function App() {
-
-  return (
-    <div>
-      <Header />
-      <CourseList />
-      <Footer />
+  return <div className="app">
+    <Navbar />
+    <div className="main">
+      <CharacterList allCharacters={allCharacters} />
+      <CharacterDetail />
     </div>
-  );
+  </div>
 }
 
-export default App;
+export default App
