@@ -14,25 +14,34 @@ function App() {
   const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal
+
     async function fetchData() {
       try {
         setIsLoading(true)
-        const { data } = await axios.get(`https://rickandmortyapi.com/api/character?name=${query}`)
+        const { data } = await axios.get(`https://rickandmortyapi.com/api/character?name=${query}`, { signal })
         setCharacters(data.results.slice(0, 4))
       } catch (err) {
-        setCharacters([])
-        toast.error(err?.response?.data?.error)
+        if (!axios.isCancel(err)) {
+          setCharacters([])
+          toast.error(err?.response?.data?.error)
+        }
       } finally {
         setIsLoading(false)
       }
     }
 
-    if (query.length < 3) {
-      setCharacters([])
-      return;
-    }
+    // if (query.length < 3) {
+    //   setCharacters([])
+    //   return;
+    // }
 
     fetchData()
+
+    return () => {
+      controller.abort()
+    }
   }, [query])
 
   const handleSelectCharacter = (id) => {
@@ -44,8 +53,6 @@ function App() {
   }
 
   const isAddedToFavorite = favorites.map((fav) => fav.id).includes(selectedId)
-
-  console.log(selectedId);
 
   return <div className="app">
     <Toaster />
