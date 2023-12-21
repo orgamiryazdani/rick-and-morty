@@ -225,3 +225,24 @@
     flex-direction: row;
   }
 }
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  .characters-list {
+    width: 100%;
+  }
+  .navbar__logo,
+  .navbar__result {
+    font-size: 10px;
+  }
+  .navbar .heart .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .search__input {
+    width: 150px;
+    height: 35px;
+  }
+}
