@@ -19,7 +19,9 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-color: var(--slate-900);
+  overflow-x: hidden;
 }
+
 button {
   background-color: transparent;
   cursor: pointer;
@@ -33,6 +35,7 @@ button {
   border: none;
   outline: none;
 }
+
 .text-field {
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
