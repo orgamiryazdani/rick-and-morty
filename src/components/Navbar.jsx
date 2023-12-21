@@ -18,7 +18,7 @@ function Logo() {
     return <div className="navbar__logo">LOGO 😍</div>
 }
 export function Search({ query, setQuery }) {
-    return <input type="text" placeholder="search..." value={query} onChange={(e) => setQuery(e.target.value)} className="text-field" />
+    return <input type="text" placeholder="search..." value={query} onChange={(e) => setQuery(e.target.value)} className="text-field search__input" />
 }
 
 export function SearchResult({ numOfResult }) {
