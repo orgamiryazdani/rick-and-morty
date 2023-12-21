@@ -245,4 +245,7 @@
     width: 150px;
     height: 35px;
   }
+  .backdrop {
+    height: 50vh;
+  }
 }
